@@ -1,106 +1,56 @@
-import React, { useState } from 'react'
+import React from 'react';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
-
     return (
-        <nav className="bg-white shadow-lg">
-            <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
-                    {/* Brand */}
-                    <div className="flex-shrink-0">
-                        <h1 className="text-2xl font-bold text-gray-800">MyBrand</h1>
-                    </div>
-                    {/* Desktop Menu */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-4">
-                            <a
-                                href="#home"
-                                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                            >
-                                Home
-                            </a>
-                            <a
-                                href="#about"
-                                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                            >
-                                About
-                            </a>
-                            <a
-                                href="#services"
-                                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                            >
-                                Services
-                            </a>
-                            <a
-                                href="#contact"
-                                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                            >
-                                Contact
-                            </a>
-                        </div>
-                    </div>
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            type="button"
-                            className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900"
-                        >
-                            {isOpen ? (
-                                <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M18.3 5.71a1 1 0 00-1.42-1.42L12 9.17 7.12 4.29A1 1 0 105.7 5.71L10.59 10.6 5.7 15.49a1 1 0 001.42 1.42L12 12.83l4.88 4.88a1 1 0 001.42-1.42l-4.89-4.88 4.89-4.89z"
-                                    />
-                                </svg>
-                            ) : (
-                                <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 110-2z"
-                                    />
-                                </svg>
-                            )}
-                        </button>
-                    </div>
-                </div>
+        <nav className="flex justify-between items-center bg-gray-800 p-4 relative">
+            <div className="text-white font-bold text-xl">
+                CodeEditor
             </div>
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a
-                            href="#home"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                        >
-                            Home
-                        </a>
-                        <a
-                            href="#about"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                        >
-                            About
-                        </a>
-                        <a
-                            href="#services"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                        >
-                            Services
-                        </a>
-                        <a
-                            href="#contact"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition duration-300 transform hover:scale-105"
-                        >
-                            Contact
-                        </a>
-                    </div>
-                </div>
-            )}
+            <ul className="flex space-x-6">
+                <li className="relative group text-white hover:underline cursor-pointer">
+                    File
+                    <ul className="absolute bg-gray-800 mt-2 py-2 w-40 opacity-0 transform scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto origin-top">
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">New File</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Open File</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Save</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Save As</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Close File</li>
+                    </ul>
+                </li>
+                <li className="relative group text-white hover:underline cursor-pointer">
+                    Edit
+                    <ul className="absolute bg-gray-800 mt-2 py-2 w-40 opacity-0 transform scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto origin-top">
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Undo</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Redo</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Cut</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Copy</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Paste</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Select All</li>
+                    </ul>
+                </li>
+                <li className="relative group text-white hover:underline cursor-pointer">
+                    View
+                    <ul className="absolute bg-gray-800 mt-2 py-2 w-40 opacity-0 transform scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto origin-top">
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Zoom In</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Zoom Out</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Reset Zoom</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Full Screen</li>
+                    </ul>
+                </li>
+                <li className="relative group text-white hover:underline cursor-pointer">
+                    Help
+                    <ul className="absolute bg-gray-800 mt-2 py-2 w-40 opacity-0 transform scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto origin-top">
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Documentation</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Report Issue</li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">About</li>
+                    </ul>
+                </li>
+            </ul>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                Settings
+            </button>
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
