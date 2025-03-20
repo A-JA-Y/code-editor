@@ -1,21 +1,37 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './components/Register';
+import Login from './components/Login';
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={
+            <div className="bg-gray-200  text-center">
+            <div  className="flex justify-between items-center bg-gray-800 p-4 relative">
+                        <div className="text-white font-bold text-xl">
+                            CodeEditor
+                        </div>
+                        
+                        <button className=" text-white font-bold  rounded ">
+                            signin//SignUp
+                        </button>
+                    </div>
+
+              <h1 className="text-gray-800">Welcome to the Browser-Based Code Editor</h1>
+              <p className="text-gray-600">
+                Please <a href="/register" className="text-blue-500 hover:underline">register</a> or <a href="/login" className="text-blue-500 hover:underline">login</a> to continue.
+              </p>
+            </div>
+          } />
+        </Routes>
+      </div>
     </Router>
   );
-};
+}
 
 export default App;
