@@ -5,18 +5,23 @@ import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Logout from './components/Logout';
 import Profile from './components/Profile';
-
+import Navbar from './components/Navbar.jsx';
 function App() {
   return (
     <Router>
       <div className="App">
         <nav>
-          <Logout />
+        <Navbar />
+          {/* <Logout /> */}
         </nav>
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<h1>Welcome to the Browser-Based Code Editor</h1>} />
+          <Route path="/" element={
+            <div>
+              <h1>Home Page</h1>
+            </div>
+          } />
           <Route
             path="/protected"
             element={
