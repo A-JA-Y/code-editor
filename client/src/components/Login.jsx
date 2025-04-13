@@ -33,21 +33,22 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className='w-full max-w-xs mx-auto mt-10 p-4 border rounded shadow-lg drop-shadow-md bg-white dark:bg-gray-800 dark:text-yellow-50'>
+      <h1 className='text-2xl font-bold mb-4'>Login</h1>
+      <p className=' mb-4'>Please enter your credentials to login/signup.</p>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={onSubmit}>
         <div>
           <label>Email:</label>
           <br />
-          <input type="email" name="email" value={email} onChange={onChange} required />
+          <input type="email" name="email" value={email} onChange={onChange} className='border rounded p-2' required />
         </div>
         <div>
           <label>Password:</label>
           <br />
-          <input type="password" name="password" value={password} onChange={onChange} required />
+          <input type="password" name="password" value={password} onChange={onChange} className='border rounded p-2' required />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className='bg-zinc-300 dark:bg-zinc-900 rounded py-2 px-5  mt-4'>Login</button>
       </form>
     </div>
   );
