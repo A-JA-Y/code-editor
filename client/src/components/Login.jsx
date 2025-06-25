@@ -46,7 +46,7 @@ function Login() {
         <div>
           <label>Password:</label>
           <br />
-          <input type="password" name="password" value={password} onChange={onChange} className='border rounded p-2' required />
+          <input type="password" name="password" value={password} onChange={onChange} className='border rounded p-2 text-black' required />
         </div>
         <button type="submit" className='bg-zinc-300 dark:bg-zinc-900 rounded py-2 px-5  mt-4'>Login</button>
       </form>
